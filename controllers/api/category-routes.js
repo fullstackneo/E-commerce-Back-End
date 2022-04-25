@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
   // find all categories
   // be sure to include its associated Products
   Category.findAll({
+    order: [['id']],
     include: {
       model: Product,
     },
@@ -57,7 +58,7 @@ router.put('/:id', (req, res) => {
     .then(dbData => {
       if (!dbData) {
         res.status(404).json({ message: 'No category found with this id' });
-      } 
+      }
       res.status(200).json(dbData);
     })
     .catch(err => res.status(500).json(err));
