@@ -58,6 +58,8 @@ router.put('/:id', (req, res) => {
     .then(dbData => {
       if (!dbData) {
         res.status(404).json({ message: 'No category found with this id' });
+      } else if (dbData[0] === 0) {
+        res.status(400).json({ message: 'Unable to update' });
       }
       res.status(200).json(dbData);
     })
@@ -75,7 +77,7 @@ router.delete('/:id', (req, res) => {
       if (!dbData) {
         res.status(404).json('No category found with this id');
       } else {
-        res.status(200).json(dbData);
+        res.status(200).json(`Deleted ${dbData} item`);
       }
     })
     .catch(err => res.status(500).json(err));

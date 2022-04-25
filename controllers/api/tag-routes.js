@@ -66,9 +66,11 @@ router.put('/:id', (req, res) => {
     },
   })
     .then(dbData => {
-      if (dbData[0] == 0) {
+      if (!dbData) {
         res.status(404).json({ message: 'No tag found with this id' });
-      } 
+      } else if (dbData[0] === 0) {
+        res.status(400).json({ message: 'Unable to update' });
+      }
       res.status(200).json(dbData);
     })
     .catch(err => res.status(500).json(err));
