@@ -6,7 +6,7 @@
 
 ## Demo
 
-[![Watch the video](https://github.com/fullstackneo/E-commerce-Back-End/blob/main/assets/screenshots/screenshot.jpg)](https://drive.google.com/file/d/1zxNuyWb5riF6geEpdnxSKB1G8bLr2TdB/view)
+[![Watch the video](https://github.com/fullstackneo/E-commerce-Back-End/blob/main/assets/screenshots/screenshot.jpg)](https://drive.google.com/file/d/1JYgTQ73AzYHOTtssQakP2s-P3suGvkr4/view)
 
 ## Link
 
