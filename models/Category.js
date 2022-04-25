@@ -15,6 +15,7 @@ Category.init(
     // define columns
     category_name: {
       type: DataTypes.STRING,
+      unique: true,
       allowNull: false,
     },
   },
