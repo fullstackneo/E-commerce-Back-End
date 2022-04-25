@@ -9,14 +9,12 @@ router.get('/', (req, res) => {
   Tag.findAll({
     include: {
       model: Product,
-      attributes: { exclude: ['category_id'] },
-      through: { attributes: [] },
-      include: {
-        model: Category,
-        as: 'category',
-      },
+      // through: { attributes: [] },
+      // include: {
+      //   model: Category,
+      //   as: 'category',
+      // },
     },
-    required: true,
   })
     .then(dbData => {
       if (!dbData) {
@@ -35,11 +33,11 @@ router.get('/:id', (req, res) => {
     where: { id: req.params.id },
     include: {
       model: Product,
-      through: { attributes: [] },
-      include: {
-        model: Category,
-        as: 'category',
-      },
+      // through: { attributes: [] },
+      // include: {
+      //   model: Category,
+      //   as: 'category',
+      // },
     },
   })
     .then(dbData => {
